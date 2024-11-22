@@ -98,7 +98,6 @@ nav a:hover {
     margin-bottom: 1rem;
 }
 
-/* Project cards */
 /* Projects Section */
 h2 {
     font-size: 2.5rem;
@@ -110,31 +109,33 @@ h2 {
 /* Container for project cards */
 .projects-container {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    gap: 2rem;
+    flex-wrap: wrap; /* Enables wrapping for multiple projects */
+    justify-content: space-between; /* Distributes cards evenly */
+    gap: 20px; /* Space between cards */
     padding: 2rem;
 }
 
 /* Individual project card styling */
 .project-card {
+    flex: 1 1 calc(50% - 20px); /* Cards take up 50% width minus the gap */
+    max-width: calc(50% - 20px); /* Ensures two cards per row */
     background: #fff;
     border: 1px solid #ddd;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 320px;
     padding: 1.5rem;
+    box-sizing: border-box; /* Includes padding and borders in width */
     text-align: center;
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
+/* Hover effects for cards */
 .project-card:hover {
     transform: translateY(-10px); /* Slightly lift the card */
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Darker shadow on hover */
 }
 
-/* Project Titles and Descriptions */
+/* Titles and descriptions for project cards */
 .project-card h3 {
     font-size: 1.8rem;
     margin-bottom: 1rem;
@@ -153,13 +154,30 @@ h2 {
     margin-bottom: 1.5rem;
 }
 
-/* Project Image Styling */
+/* Project image styling */
 .project-card img {
     max-width: 100%;
     height: auto;
     border-radius: 8px;
     margin-bottom: 1.5rem;
 }
+
+/* Responsive adjustment for medium screens */
+@media (max-width: 1024px) {
+    .project-card {
+        flex: 1 1 calc(50% - 20px); /* Still two per row on medium screens */
+        max-width: calc(50% - 20px);
+    }
+}
+
+/* Responsive adjustment for smaller screens */
+@media (max-width: 768px) {
+    .project-card {
+        flex: 1 1 calc(100% - 20px); /* Stacks cards in a single column */
+        max-width: calc(100% - 20px);
+    }
+}
+
 
 /* Button styling */
 .button {
