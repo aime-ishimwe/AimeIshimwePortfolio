@@ -30,4 +30,5 @@ function openFullscreen(img) {
         document.body.removeChild(fullscreenDiv);
     }
 }
-
+document.querySelector('.menu-toggle').addEventListener('click', () => {
+    document.querySelector('.nav-links').classList.toggle('active')});
